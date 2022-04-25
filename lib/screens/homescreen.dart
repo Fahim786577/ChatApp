@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:chatapp/helpers.dart';
+//import 'package:chatapp/helpers.dart';
+import 'package:chatapp/screens/profile_screen.dart';
 import 'package:chatapp/theme.dart';
 import 'package:chatapp/widgets/widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,7 +10,8 @@ import 'package:chatapp/pages/calls.dart';
 import 'package:chatapp/pages/contacts.dart';
 import 'package:chatapp/pages/messages.dart';
 import 'package:chatapp/pages/notifications.dart';
-
+import 'package:chatapp/app.dart';
+import 'package:chatapp/widgets/realavatar.dart' as realavatar;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({ Key? key }) : super(key: key);
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Messages(),
     Notifications(),
     Calls(),
-    Contacts(),
+    ContactsPage(),
   ];
 
   final pageTitle = const [
@@ -68,7 +70,16 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
-            child: Avatar.small(url: Helpers.randomPictureUrl()),
+            child: Hero(
+              tag: 'hero-profile-picture',
+              child: realavatar.Avatar.small(
+                url: context.currentUserImage,
+                onTap: () {
+                    Navigator.of(context).push(ProfileScreen.route);
+                  },
+                ),
+            ),
+            
           )
           ],
       ),
