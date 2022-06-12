@@ -14,6 +14,9 @@ import 'package:chatapp/app.dart';
 import 'package:chatapp/widgets/realavatar.dart' as realavatar;
 
 class HomeScreen extends StatefulWidget {
+  static Route get route => MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
+      );
   const HomeScreen({ Key? key }) : super(key: key);
 
   @override

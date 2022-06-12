@@ -279,7 +279,7 @@ class _StoryCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
 
         children: [
-          Avatar(radius: 25,url: storyData.url),
+          realavatar.Avatar(radius: 25,url: storyData.url),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 15.0),

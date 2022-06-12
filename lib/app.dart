@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart' as log;
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 
-const streamkey = 'uvary54825ea';
-
+//const streamkey = 'uvary54825ea';
+const streamkey = 'ztc4bd39he4h';
 var logger = log.Logger();
 
 /// Extensions can be used to add functionality to the SDK.

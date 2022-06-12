@@ -1,12 +1,16 @@
 
 import 'package:chatapp/app.dart';
 import 'package:chatapp/screens/screens.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:chatapp/theme.dart';
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 
 
-void main() {
+void main () async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   final client  = StreamChatClient(streamkey);
   runApp(MyApp(client: client,));
 }
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
             (child: child!)),
           );
       },
-      home: const SelectUserScreen(),
+      home: const SignUpScreen(),
 
     );
   }

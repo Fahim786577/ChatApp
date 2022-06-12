@@ -45,15 +45,22 @@ class Avatar extends StatelessWidget {
   if(url != null){
     return CircleAvatar(
     radius: radius,
-    backgroundImage: AssetImage(url!),
+    //backgroundImage: AssetImage(url!),
+    child: Image.network(
+      url!,
+      fit: BoxFit.cover,
+      width: double.infinity,
+    ),
     backgroundColor: Theme.of(context).cardColor,
   );
   }else{
     return CircleAvatar(
         radius: radius,
         backgroundColor: Theme.of(context).cardColor,
-        child: Center(
-          child: Text('?',style: TextStyle(fontSize: radius),),
+        child: Image.asset(
+          'assets/profilepics/blank-profile-picture.png',
+          fit: BoxFit.cover,
+          width: double.infinity,
         ),
     );
   }

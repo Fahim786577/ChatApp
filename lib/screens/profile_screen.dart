@@ -59,7 +59,7 @@ class __SignOutButtonState extends State<_SignOutButton> {
     try {
       await StreamChatCore.of(context).client.disconnectUser();
 
-      Navigator.of(context).push(SelectUserScreen.route);
+      Navigator.of(context).push(SignUpScreen.route);
     } on Exception catch (e, st) {
       logger.e('Could not sign out', e, st);
       setState(() {
